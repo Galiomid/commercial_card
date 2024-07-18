@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                echo 'Hello World'
+                git branch: 'feature/christ', credentialsId: 'git-credential', url: 'https://github.com/Galiomid/commercial_card.git'
             }
         }
-        stage('Hello') {
+        stage('compile') {
             steps {
-                echo 'Hello World'
+                sh "mvn compile"
             }
         }
         stage('Hello') {
